@@ -8,14 +8,14 @@ import static com.codeborne.selenide.Selenide.page;
 
 public class IndexPage {
 
-    SelenideElement newLink = $("#newbutton"),
-                    dublicateLink = $(".buttonAsLink:nth-child(2)"),
-                    editLink = $(".buttonAsLink:nth-child(3)"),
-                    deleteLink = $(".buttonAsLink:nth-child(4)"),
-                    selectAnActionDropdown = $("#commandSelect"),
-                    categoryNameDropdown = $("#SelectedCateg"),
-                    statusDropdown = $("#SelectedStatus"),
-                    applyButton = $("#applybutton");
+    private SelenideElement newLink = $("#newbutton");
+    private SelenideElement dublicateLink = $(".buttonAsLink:nth-child(2)");
+    private SelenideElement editLink = $(".buttonAsLink:nth-child(3)");
+    private SelenideElement deleteLink = $(".buttonAsLink:nth-child(4)");
+    private SelenideElement selectAnActionDropdown = $("#commandSelect");
+    private SelenideElement categoryNameDropdown = $("#SelectedCateg");
+    private SelenideElement statusDropdown = $("#SelectedStatus");
+    private SelenideElement applyButton = $("#applybutton");
 
 
     EditorPage clickNewLink() {
@@ -35,7 +35,22 @@ public class IndexPage {
 
     DeleteConfirmationPopup clickDeleteLink() {
         deleteLink.click();
-        return new DeleteConfirmationPopup();
+        return page(DeleteConfirmationPopup.class);
     }
 
+    void selectAction(String value){
+        selectAnActionDropdown.selectOptionByValue(value);
+    }
+
+    void selectCategoryName(String value){
+        categoryNameDropdown.selectOptionByValue(value);
+    }
+
+    void selectStatus(String value){
+        statusDropdown.selectOptionByValue(value);
+    }
+
+    void clickApply(){
+        applyButton.click();
+    }
 }

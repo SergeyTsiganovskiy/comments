@@ -11,20 +11,26 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
 
 public class EditorPage {
-    SelenideElement refresh = $(byText("Refresh")),
-                    save = $(byValue("Save")),
-                    saveAndReturn = $(byValue("Save & Return")),
-                    returnLink = $(byText("Return")),
-                    incorectCommentFieldsMessage = $("#errorfield"),
-                    commentText = $("#Text"),
-                    commentNumber = $("#Number"),
-                    iscommentActive = $("#Active"),
-                    moveAllToSelectedCategories = $(byValue(">>")),
-                    moveCheckedToSelectedCategories = $(byValue(">")),
-                    moveAllToAvailableCategories = $(byValue("<<")),
-                    moveCheckedToAvailableCategories = $(byValue("<"));
-    ElementsCollection  availableCategories = $("#alvailablecategories").findAll("#Categories"),
-                        selectedCategories = $("#selectedCategories").findAll("#Categories");
+    private SelenideElement refresh = $(byText("Refresh"));
+    private SelenideElement save = $(byValue("Save"));
+    private SelenideElement saveAndReturn = $(byValue("Save & Return"));
+    private SelenideElement returnLink = $(byText("Return"));
+    private SelenideElement incorectCommentFieldsMessage = $("#errorfield");
+    private SelenideElement commentText = $("#Text");
+    private SelenideElement commentNumber = $("#Number");
+    private SelenideElement iscommentActive = $("#Active");
+    private SelenideElement moveAllToSelectedCategories = $(byValue(">>"));
+    private SelenideElement moveCheckedToSelectedCategories = $(byValue(">"));
+    private SelenideElement moveAllToAvailableCategories = $(byValue("<<"));
+    private SelenideElement moveCheckedToAvailableCategories = $(byValue("<"));
+
+    private ElementsCollection  availableCategories =
+            $("#alvailablecategories").findAll("#Categories");
+    private ElementsCollection  selectedCategories =
+            $("#selectedCategories").findAll("#Categories");
+
+
+
 }
 
 
