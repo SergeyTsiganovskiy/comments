@@ -30,7 +30,6 @@ public class EditorPage {
             $("#selectedCategories").findAll("#Categories");
 
 
-
 }
 
 
