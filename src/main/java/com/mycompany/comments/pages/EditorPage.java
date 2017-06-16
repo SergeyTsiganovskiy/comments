@@ -4,9 +4,12 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import com.mycompany.comments.models.Comment;
 
+import java.util.ArrayList;
 import java.util.List;
+
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
+import static com.codeborne.selenide.Selenide.open;
 
 // For simplicity all fields are public and there are no any getter
 
@@ -16,6 +19,9 @@ public class EditorPage {
     public SelenideElement saveAndReturn = $(byValue("Save & Return"));
     public SelenideElement returnLink = $(byText("Return"));
     public SelenideElement incorectCommentFieldsMessage = $("#errorfield");
+    public SelenideElement getCommentText() {
+        return commentText;
+    }
     public SelenideElement commentText = $("#Text");
     public SelenideElement commentNumber = $("#Number");
     public SelenideElement iscommentActive = $("#Active");
@@ -44,6 +50,14 @@ public class EditorPage {
                 if (categories.get(i).equals(availableCategoryItems.get(j).getText()))
                     availableCategoryItems.get(j).find("#Categories").click();
         }
+    }
+
+    public List<String> getSelectedCategoriesNames() {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < selectedCategoryItems.size(); i++) {
+            list.add(selectedCategoryItems.get(i).getText());
+        }
+        return list;
     }
 }
 

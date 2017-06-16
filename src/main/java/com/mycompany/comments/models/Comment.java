@@ -15,11 +15,7 @@ public class Comment {
         this.number = number;
         this.commentText = commentText;
         this.isActive = isActive;
-        if (CategoryRepository.getAvailbaleCategories().containsAll(categories)) {
-            this.categories = new ArrayList<String>(categories);
-        } else {
-            throw new RuntimeException("Category name is not correct");
-        }
+        this.categories = categories;
     }
 
     public String getNumber() {
@@ -58,5 +54,15 @@ public class Comment {
         result = 31 * result + (isActive ? 1 : 0);
         result = 31 * result + categories.hashCode();
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "number='" + number + '\'' +
+                ", commentText='" + commentText + '\'' +
+                ", isActive=" + isActive +
+                ", categories=" + categories +
+                '}';
     }
 }

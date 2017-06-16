@@ -25,7 +25,6 @@ public class CreationTest extends BaseTest {
     public void testValidCommentCreation() {
         editorPage.fillNewCommentsFields(getValidActiveComment());
         editorPage.saveAndReturn.click();
-        Table table = new Table();
-        assertTrue(table.isCommentInTable(getValidActiveComment().getNumber()));
+        assertTrue(new Table().isCommentInTable(getValidActiveComment().getNumber()));
     }
 }

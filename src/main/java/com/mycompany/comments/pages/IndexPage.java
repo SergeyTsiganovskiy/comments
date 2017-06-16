@@ -18,39 +18,39 @@ public class IndexPage {
     private SelenideElement applyButton = $("#applybutton");
 
 
-    EditorPage clickNewLink() {
+    public EditorPage clickNewLink() {
         newLink.click();
         return page(EditorPage.class);
     }
 
-    EditorPage clickDuplicateLink() {
+    public EditorPage clickDuplicateLink() {
         dublicateLink.click();
         return page(EditorPage.class);
     }
 
-    EditorPage clickEditink() {
+    public EditorPage clickEditink() {
         editLink.click();
         return page(EditorPage.class);
     }
 
-    DeleteConfirmationPopup clickDeleteLink() {
+    public DeleteConfirmationPopup clickDeleteLink() {
         deleteLink.click();
         return page(DeleteConfirmationPopup.class);
     }
 
-    void selectAction(String value){
+    public void selectAction(String value){
         selectAnActionDropdown.selectOptionByValue(value);
     }
 
-    void selectCategoryName(String value){
+    public void selectCategoryName(String value){
         categoryNameDropdown.selectOptionByValue(value);
     }
 
-    void selectStatus(String value){
+    public void selectStatus(String value){
         statusDropdown.selectOptionByValue(value);
     }
 
-    void clickApply(){
+    public void clickApply(){
         applyButton.click();
     }
 }
